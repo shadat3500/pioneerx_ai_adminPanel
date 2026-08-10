@@ -10,6 +10,10 @@ import {
   btnGhost,
 } from "@/components/ui/PageShell";
 
+const SITE_BASE = (
+  import.meta.env.VITE_SITE_URL || "http://localhost:8000"
+).replace(/\/$/, "");
+
 const SLUG_LABELS: Record<string, string> = {
   "about-us": "About Us",
   "contact-us": "Contact Us",
@@ -154,7 +158,7 @@ export default function SitePagesPage() {
                 </button>
                 <a
                   className={btnGhost}
-                  href={`https://mohaimin8000.sobhoy.com/${activeSlug}`}
+                  href={`${SITE_BASE}/${activeSlug}`}
                   target="_blank"
                   rel="noreferrer"
                 >
